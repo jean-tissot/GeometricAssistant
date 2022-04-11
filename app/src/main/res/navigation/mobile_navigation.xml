@@ -3,13 +3,13 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/mobile_navigation"
-            app:startDestination="@+id/navigation_home">
+            app:startDestination="@+id/navigation_polygon">
 
     <fragment
-            android:id="@+id/navigation_home"
-            android:name="com.example.geometricassistant.ui.home.HomeFragment"
-            android:label="@string/title_home"
-            tools:layout="@layout/fragment_home"/>
+            android:id="@+id/navigation_polygon"
+            android:name="com.example.geometricassistant.ui.polygon.PolygonFragment"
+            android:label="@string/title_polygon"
+            tools:layout="@layout/fragment_polygon"/>
 
     <fragment
             android:id="@+id/navigation_dashboard"
