@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">Geometric Assistant</string>
+    <string name="app_name" translatable="false">Geometric Assistant</string>
     <string name="title_polygon">Polygon</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_dashboard" translatable="false">Dashboard</string>
+    <string name="title_notifications" translatable="false">Notifications</string>
+    <string name="polygon_view_description">Figure showing the polygon to be cut out</string>
 </resources>
