@@ -8,20 +8,20 @@
         tools:context=".ui.polygon.PolygonFragment">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/cutValueLeft"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
         android:gravity="center"
         android:text="Cut Value"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/cutValueRight"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/cutValueRight"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="366dp"
@@ -43,6 +43,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/cutValueLeft" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
