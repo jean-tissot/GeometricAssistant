@@ -1,9 +1,14 @@
 package com.example.geometricassistant.ui.polygon
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -36,17 +41,49 @@ class PolygonFragment : Fragment() {
         }
 
         // The side number input value
-        val spinner = binding.nbSides;
-        if (spinner != null) {
+        val nbSidesInput = binding.nbSides;
+        if (nbSidesInput != null) {
             val adapter = context?.let { ArrayAdapter<String>(it, R.layout.support_simple_spinner_dropdown_item) }
             adapter?.addAll("4", "8", "16", "32", "64")
-            spinner.adapter = adapter
+            nbSidesInput.adapter = adapter
+            nbSidesInput.onItemSelectedListener = NbSideListener()
         }
+
+        // The radius input value
+        binding.radius?.addTextChangedListener(RadiusListener())
         return root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    inner class NbSideListener: OnItemSelectedListener {
+        override fun onItemSelected(parentView: AdapterView<*>?, selectedView: View?, position: Int, id: Long) {
+            val selectedValue = parentView?.getItemAtPosition(position) as String
+            polygonViewModel.nbSides = selectedValue.toInt()
+        }
+
+        override fun onNothingSelected(p0: AdapterView<*>?) {
+            polygonViewModel.nbSides = null
+        }
+    }
+
+    inner class RadiusListener: TextWatcher {
+        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+        }
+
+        override fun onTextChanged(text: CharSequence?, start: Int, count: Int, after: Int) {
+            Log.w("Selecting radius", text.toString())
+            try {
+                polygonViewModel.radius = text.toString().toInt()
+            } catch (e: java.lang.Exception) {
+                polygonViewModel.radius = null
+            }
+        }
+
+        override fun afterTextChanged(p0: Editable?) {
+        }
     }
 }
