@@ -4,4 +4,5 @@
     <string name="polygon_view_description">Figure représentant le polygone à découper</string>
     <string name="sideNumberLabel">Nombre de côtés :</string>
     <string name="radiusLabel">Rayon :</string>
+    <string name="cut_value_label">Distance de coupe</string>
 </resources>
